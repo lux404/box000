@@ -262,9 +262,22 @@ def get_iso(country_code):
             return i.upper()
         else: return country_code
 
-with open('bins_.csv', mode='r', encoding = 'utf-8') as inp:
+with open('bins.csv', mode='r', encoding = 'utf-8') as inp, open('bins2.csv', mode='r', encoding = 'utf-8') as xdd:
     reader = csv.reader(inp)
+    reade1 = csv.reader(xdd)
     for x in reader:
+        x2 = {
+                "country": get_iso(x[1]),
+                "iso": x[1],
+                "flag" : x[2],
+                "vendor": x[3],
+                "type": x[4],
+                "level": x[5],
+                "bank_name": x[6],
+                "prepaid": True if x[5] == "PREPAID" else False
+            }
+        mydict[x[0]] = x2
+    for x in reade1:
         x2 = {
                 "country": get_iso(x[1]),
                 "iso": x[1],
