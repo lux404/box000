@@ -262,9 +262,8 @@ def get_iso(country_code):
             return i.upper()
         else: return country_code
 
-with open('bins.csv', mode='r', encoding = 'utf-8') as inp, open('bins2.csv', mode='r', encoding = 'utf-8') as inb:
+with open('bins_.csv', mode='r', encoding = 'utf-8') as inp:
     reader = csv.reader(inp)
-    reader = csv.reader(inb)
     for x in reader:
         x2 = {
                 "country": get_iso(x[1]),
