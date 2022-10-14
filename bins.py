@@ -267,7 +267,7 @@ with open('bins.csv', mode='r', encoding = 'utf-8') as inp, open('bins2.csv', mo
     reade1 = csv.reader(xdd)
     for x in reader:
         x2 = {
-                "country": get_iso(x[1]),
+                "country": get_iso(x[2]),
                 "iso": x[1],
                 "flag" : x[2],
                 "vendor": x[3],
@@ -279,7 +279,7 @@ with open('bins.csv', mode='r', encoding = 'utf-8') as inp, open('bins2.csv', mo
         mydict[x[0]] = x2
     for x in reade1:
         x2 = {
-                "country": get_iso(x[1]),
+                "country": get_iso(x[2]),
                 "iso": x[1],
                 "flag" : x[2],
                 "vendor": x[3],
